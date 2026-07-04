@@ -93,7 +93,7 @@ export default function SideMenu({ className }) {
                   />
                 </ListItemButton>
               </ListItem>
-              <Box sx={{ height: "25px" }} />
+              <Box sx={{ height: "100px" }} />
             </React.Fragment>
           ))}
         </List>

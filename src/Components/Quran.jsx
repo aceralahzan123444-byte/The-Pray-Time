@@ -60,12 +60,12 @@ export default function Quran() {
   function SurahId(id) {
     setselectedSurahId(id);
   }
-  function handleSearchChange(event) {
-    if (event.key === "Enter" && filteredSurahs.length > 0) {
-      setselectedSurahId(filteredSurahs[0].id);
-      setSearchTerm("");
-    }
-  }
+  // function handleSearchChange(event) {
+  //   if (event.key === "Enter" && filteredSurahs.length > 0) {
+  //     setselectedSurahId(filteredSurahs[0].id);
+  //     setSearchTerm("");
+  //   }
+  // }
   if (isLoading) {
     return (
       <div
@@ -99,36 +99,45 @@ export default function Quran() {
   const selectedSurahDetails = Surahs.find(
     (surah) => surah.id === selectedSurahId,
   );
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (filteredSurahs.length > 0) {
+      setselectedSurahId(filteredSurahs[0].id);
+      setSearchTerm("");
+      console.log("تم الانتقال بنجاح عبر الجوال!");
+    }
+  };
   return (
     <div className="quran-container">
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder=" ابحث عن اسم السورة..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className={Darkmod ? "dark-mod-inputSearch" : "inputSearch"}
-          onKeyDown={(e) => handleSearchChange(e)}
-        />
+      <form onSubmit={handleSubmit}>
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder=" ابحث عن اسم السورة..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className={Darkmod ? "dark-mod-inputSearch" : "inputSearch"}
+          />
 
-        <select
-          onChange={(e) => SurahId(Number(e.target.value))}
-          value={selectedSurahId}
-          className={
-            Darkmod ? "dark-mod-select Dark-scroll-bar" : "select scroll-bar"
-          }
-        >
-          {filteredSurahs.map((surahDone) => (
-            <option
-              className={Darkmod ? "dark-mod-option" : "option"}
-              key={surahDone.id}
-              value={surahDone.id}
-            >
-              {surahDone.name}
-            </option>
-          ))}
-        </select>
-      </div>
+          <select
+            onChange={(e) => SurahId(Number(e.target.value))}
+            value={selectedSurahId}
+            className={
+              Darkmod ? "dark-mod-select Dark-scroll-bar" : "select scroll-bar"
+            }
+          >
+            {filteredSurahs.map((surahDone) => (
+              <option
+                className={Darkmod ? "dark-mod-option" : "option"}
+                key={surahDone.id}
+                value={surahDone.id}
+              >
+                {surahDone.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </form>
 
       {selectedSurahDetails && (
         <div className={Darkmod ? "Dark-surah-details" : "surah-details"}>
@@ -158,7 +167,7 @@ export default function Quran() {
             return (
               <h1
                 key={ayah.number}
-                style={{ paddingBottom: "15px", fontSize: "35px" }}
+                style={{ paddingBottom: "15px", fontSize: "30px" }}
                 className={
                   Darkmod ? "Dark-amiri-quran-regular" : "amiri-quran-regular"
                 }
