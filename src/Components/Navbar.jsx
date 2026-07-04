@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 import "../index.css";
 import {
   Drawer,
@@ -17,7 +18,7 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import TouchAppIcon from "@mui/icons-material/TouchApp";
 import HomeIcon from "@mui/icons-material/Home";
-
+import Box from "@mui/material/Box";
 export default function SideMenu({ className }) {
   const [isOpen, setIsOpen] = useState(false);
   const { Darkmod } = useTheme();
@@ -65,32 +66,35 @@ export default function SideMenu({ className }) {
           role="presentation"
         >
           {menuItems.map((item, index) => (
-            <ListItem key={index} disablePadding>
-              <ListItemButton
-                className="Icon-Button"
-                component={Link}
-                to={item.path}
-                onClick={() => {
-                  console.log(`الانتقال إلى قسم: ${item.path}`);
-                  setIsOpen(false);
-                }}
-              >
-                <ListItemIcon
-                  className={Darkmod ? "dark-menu-icon" : "main-menu-icon"}
-                  sx={{ minWidth: 40 }}
-                >
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.text}
-                  className={Darkmod ? "dark-menu-text" : "main-menu-text"}
-                  sx={{
-                    textAlign: "right",
-                    fontFamily: "Cairo",
+            <React.Fragment key={index}>
+              <ListItem key={index} disablePadding>
+                <ListItemButton
+                  className="Icon-Button"
+                  component={Link}
+                  to={item.path}
+                  onClick={() => {
+                    console.log(`الانتقال إلى قسم: ${item.path}`);
+                    setIsOpen(false);
                   }}
-                />
-              </ListItemButton>
-            </ListItem>
+                >
+                  <ListItemIcon
+                    className={Darkmod ? "dark-menu-icon" : "main-menu-icon"}
+                    sx={{ minWidth: 40 }}
+                  >
+                    {item.icon}
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={item.text}
+                    className={Darkmod ? "dark-menu-text" : "main-menu-text"}
+                    sx={{
+                      textAlign: "right",
+                      fontFamily: "Cairo",
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+              <Box sx={{ height: "25px" }} />
+            </React.Fragment>
           ))}
         </List>
       </Drawer>
