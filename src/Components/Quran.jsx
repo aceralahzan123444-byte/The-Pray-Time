@@ -167,7 +167,7 @@ export default function Quran() {
             return (
               <h1
                 key={ayah.number}
-                style={{ paddingBottom: "15px", fontSize: "30px" }}
+                style={{ paddingBottom: "15px", fontSize: "29px"}}
                 className={
                   Darkmod ? "Dark-amiri-quran-regular" : "amiri-quran-regular"
                 }
@@ -180,7 +180,7 @@ export default function Quran() {
             <React.Fragment key={ayah.number}>
               {ayah.numberInSurah === 1 && selectedSurahId !== 9 && (
                 <h1
-                  style={{ paddingBottom: "15px", fontSize: "35px" }}
+                  style={{ paddingBottom: "15px", fontSize: "29px"}}
                   className={
                     Darkmod ? "Dark-amiri-quran-regular" : "amiri-quran-regular"
                   }
