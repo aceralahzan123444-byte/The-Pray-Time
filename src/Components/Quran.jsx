@@ -112,7 +112,8 @@ export default function Quran() {
       <form onSubmit={handleSubmit}>
         <div className="search-container">
           <input
-            type="text"
+            type="search"
+            enterKeyHint="search"
             placeholder=" ابحث عن اسم السورة..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
