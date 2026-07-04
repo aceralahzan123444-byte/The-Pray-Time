@@ -18,7 +18,6 @@ import MenuBookIcon from "@mui/icons-material/MenuBook";
 import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import TouchAppIcon from "@mui/icons-material/TouchApp";
 import HomeIcon from "@mui/icons-material/Home";
-import Box from "@mui/material/Box";
 export default function SideMenu({ className }) {
   const [isOpen, setIsOpen] = useState(false);
   const { Darkmod } = useTheme();
@@ -67,7 +66,8 @@ export default function SideMenu({ className }) {
         >
           {menuItems.map((item, index) => (
             <React.Fragment key={index}>
-              <ListItem key={index} disablePadding>
+              <ListItem key={index} disablePadding
+              sx={{ marginBottom: '150px !important' }}>
                 <ListItemButton
                   className="Icon-Button"
                   component={Link}
@@ -93,7 +93,6 @@ export default function SideMenu({ className }) {
                   />
                 </ListItemButton>
               </ListItem>
-              <Box sx={{ height: "100px" }} />
             </React.Fragment>
           ))}
         </List>
