@@ -97,60 +97,66 @@ export default function Tasbeeh() {
   };
   return (
     <>
-    <div className={Darkmod ? "Dark-tasbeeh-container" : "tasbeeh-container"}>
-      <div className="tasbeeh-card">
-        <div className={Darkmod ? "Dark-main-Text" : "main-Text" }> أذكار المسلم : </div>
-        <p className={Darkmod ? "Dark-thikr-text" : "thikr-text"}>
-          {currentThikr.text}
-        </p>
-        <span className={Darkmod ? "Dark-target-badge" : "target-badge"}>
-          الهدف: {currentThikr.target}
-        </span>
-        <div
-          className={Darkmod ? "Dark-counter-circle" : "counter-circle"}
-          onClick={handleIncrement}
-        >
-          <span className={Darkmod ? "Dark-counter-number" : "counter-number"}>
-            {count}
+      <div className={Darkmod ? "Dark-tasbeeh-container" : "tasbeeh-container"}>
+        <div className="tasbeeh-card">
+          <div className={Darkmod ? "Dark-main-Text" : "main-Text"}>
+            {" "}
+            أذكار المسلم :{" "}
+          </div>
+          <p className={Darkmod ? "Dark-thikr-text" : "thikr-text"}>
+            {currentThikr?.text}
+          </p>
+          <span className={Darkmod ? "Dark-target-badge" : "target-badge"}>
+            الهدف: {currentThikr?.target}
           </span>
-          <span className={Darkmod ? "Dark-tap-hint" : "tap-hint"}>
-            اضغط للتسبيح
-          </span>
-        </div>
-        <div className="control-actions">
-          <button
-            className={Darkmod ? "Dark-nav-btn" : "nav-btn"}
-            disabled={currentIndex === 0}
-            onClick={() => {
-              const prevIndex = currentIndex - 1;
-              setCurrentIndex(prevIndex);
-              localStorage.setItem("tasbeeh_index", prevIndex);
-            }}
+          <div
+            className={Darkmod ? "Dark-counter-circle" : "counter-circle"}
+            onClick={handleIncrement}
           >
-            السابق
-          </button>
-          <button
-            className={Darkmod ? "Dark-reset-btn" : "reset-btn"}
-            onClick={handleReset}
-          >
-            تصفير
-          </button>
-          <button
-            className={Darkmod ? "Dark-nav-btn" : "nav-btn"}
-            disabled={currentIndex === athkarAlmouslim.length - 1}
-            onClick={() => {
-              const nextIndex = currentIndex + 1;
-              setCurrentIndex(nextIndex);
-              localStorage.setItem("tasbeeh_index", nextIndex);
-            }}
-          >
-            التالي
-          </button>
+            <span
+              className={Darkmod ? "Dark-counter-number" : "counter-number"}
+            >
+              {count}
+            </span>
+            <span className={Darkmod ? "Dark-tap-hint" : "tap-hint"}>
+              اضغط للتسبيح
+            </span>
+          </div>
+          <div className="control-actions">
+            <button
+              className={Darkmod ? "Dark-nav-btn" : "nav-btn"}
+              disabled={currentIndex === 0}
+              onClick={() => {
+                const prevIndex = currentIndex - 1;
+                setCurrentIndex(prevIndex);
+                localStorage.setItem("tasbeeh_index", prevIndex);
+              }}
+            >
+              السابق
+            </button>
+            <button
+              className={Darkmod ? "Dark-reset-btn" : "reset-btn"}
+              onClick={handleReset}
+            >
+              تصفير
+            </button>
+            <button
+              className={Darkmod ? "Dark-nav-btn" : "nav-btn"}
+              disabled={currentIndex === athkarAlmouslim.length - 1}
+              onClick={() => {
+                const nextIndex = currentIndex + 1;
+                setCurrentIndex(nextIndex);
+                localStorage.setItem("tasbeeh_index", nextIndex);
+              }}
+            >
+              التالي
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-     <footer className={Darkmod ? "Dark-footer" :"footer"}>صدقة جارية • تقبل الله منا ومنكم صالح الأعمال</footer>
+      <footer className={Darkmod ? "Dark-footer-Home" : "footer-Home"}>
+        صدقة جارية • تقبل الله منا ومنكم صالح الأعمال
+      </footer>
     </>
-    
   );
 }

@@ -394,7 +394,7 @@ html {
 .darkmod-big-dashboard button > div:first-child > div:first-child {
   color: #d2ebf3;
 }
-.footer {
+.footer{
   text-align: center;
   font-size: 22px;
   width: 80%;
@@ -408,7 +408,35 @@ html {
   background-color: #d2ebf3;
   border: 2px solid #214969;
 }
-.Dark-footer {
+.footer-Home {
+  text-align: center;
+  font-size: 22px;
+  width: 80%;
+  max-width: 750px;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 30px auto 40px;
+  box-sizing: border-box;
+  font-weight: bold;
+  color: #214969;
+  background-color: #d2ebf3;
+  border: 2px solid #214969;
+}
+.Dark-footer{
+  text-align: center;
+  font-size: 22px;
+  width: 80%;
+  max-width: 750px;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 30px auto 0 auto;
+  box-sizing: border-box;
+  font-weight: bold;
+  color: #d2ebf3;
+  background-color: #214969;
+  border: 2px solid #d2ebf3;
+}
+.Dark-footer-Home {
   text-align: center;
   font-size: 22px;
   width: 80%;
@@ -1599,8 +1627,11 @@ button {
     width: 70%;
   }
   .footer,
-  .Dark-footer {
+  .Dark-footer,
+  .footer-Home,
+  .Dark-footer-Home {
     font-size: 18px;
+    margin: 30px auto 40px;
   }
   .dark-mod-select,
   .select {
@@ -1654,6 +1685,12 @@ button {
   .Dark-footer {
     font-size: 16px;
     width: 100%;
+  }
+  .footer-Home,
+  .Dark-footer-Home {
+    font-size: 16px;
+    margin: 30px auto 0 auto;
+    width: 88%;
   }
   .dark-mod-select,
   .select,
@@ -1760,6 +1797,12 @@ button {
   .Dark-footer {
     font-size: 13px;
     margin: 170px auto 0 auto;
+  }
+  .footer-Home,
+  .Dark-footer-Home {
+    font-size: 12px;
+    margin: 30px auto 40px;
+    width: 91%;
   }
   .tasbeeh-container,
   .Dark-tasbeeh-container {

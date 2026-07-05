@@ -227,7 +227,7 @@ function Home() {
           />
         </div>
       </section>
-      <footer className={Darkmod ? "Dark-footer" :"footer"}>صدقة جارية • تقبل الله منا ومنكم صالح الأعمال</footer>
+      <footer className={Darkmod ? "Dark-footer-Home" :"footer-Home"}>صدقة جارية • تقبل الله منا ومنكم صالح الأعمال</footer>
     </div>
     </>
   );
