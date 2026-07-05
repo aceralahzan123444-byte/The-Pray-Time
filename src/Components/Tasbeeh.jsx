@@ -154,7 +154,7 @@ export default function Tasbeeh() {
           </div>
         </div>
       </div>
-      <footer className={Darkmod ? "Dark-footer-Home" : "footer-Home"}>
+      <footer className={Darkmod ? "Dark-footer" : "footer"}>
         صدقة جارية • تقبل الله منا ومنكم صالح الأعمال
       </footer>
     </>
